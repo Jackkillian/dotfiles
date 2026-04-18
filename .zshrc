@@ -1,5 +1,7 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="$HOME/.local/bin:/Users/school/Library/Python/3.13/bin:$(brew --prefix llvm)/bin:$PATH"
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+export PATH="$HOME/.local/bin:$HOME/Library/Python/3.13/bin:$(brew --prefix llvm)/bin:$PATH"
 
 if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
   # Use robbyrussell on local system
