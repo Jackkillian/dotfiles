@@ -11,10 +11,7 @@ vim.diagnostic.config({
 
 -- Theme
 local function get_macos_appearance()
-  local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
-  if not handle then return "dark" end
-  local result = handle:read("*a")
-  handle:close()
+  local result = vim.fn.system("defaults read -g AppleInterfaceStyle 2>/dev/null")
   return result:match("Dark") and "dark" or "light"
 end
 
@@ -32,19 +29,24 @@ require("cyberdream").setup({
 vim.cmd.colorscheme("cyberdream")
 
 -- Sync light/dark mode with MacOS
-local last_appearance = nil
-local function sync_theme()
-  local appearance = get_macos_appearance()
-  if appearance == last_appearance then return end
-  last_appearance = appearance
-  require("cyberdream").setup({
-    theme = { variant = appearance },
+if vim.fn.has("mac") == 1 then
+  local last_appearance = get_macos_appearance()
+  local function sync_theme()
+    vim.defer_fn(function()
+      local appearance = get_macos_appearance()
+      if appearance == last_appearance then return end
+      last_appearance = appearance
+      require("cyberdream").setup({
+        theme = { variant = appearance },
+      })
+      vim.cmd.colorscheme("cyberdream")
+    end, 150)
+  end
+
+  vim.api.nvim_create_autocmd("FocusGained", {
+    callback = sync_theme,
   })
-  vim.cmd.colorscheme("cyberdream")
 end
-vim.api.nvim_create_autocmd("FocusGained", {
-  callback = sync_theme,
-})
 
 -- Lualine status bar
 require('lualine').setup({
