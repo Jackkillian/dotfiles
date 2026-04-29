@@ -1,7 +1,8 @@
-if [[ "$(uname)" == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v brew > /dev/null ; then 
+  eval "$(brew shellenv)"
   export PATH="$(brew --prefix llvm)/bin:$PATH"
 fi
+
 export PATH="$HOME/.local/bin:$HOME/Library/Python/3.13/bin:$HOME/Documents/GitHub/emsdk:$HOME/Documents/GitHub/emsdk/upstream/emscripten:$PATH"
 
 if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
@@ -35,8 +36,10 @@ setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY        
 
 # Other Plugins
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if command -v brew > /dev/null ; then 
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Exports
 export EDITOR="nvim"
