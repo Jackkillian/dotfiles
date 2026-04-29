@@ -1,7 +1,8 @@
 if [[ "$(uname)" == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  export PATH="$(brew --prefix llvm)/bin:$PATH"
 fi
-export PATH="$HOME/.local/bin:$HOME/Library/Python/3.13/bin:$(brew --prefix llvm)/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/Library/Python/3.13/bin:$HOME/Documents/GitHub/emsdk:$HOME/Documents/GitHub/emsdk/upstream/emscripten:$PATH"
 
 if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
   # Use robbyrussell on local system

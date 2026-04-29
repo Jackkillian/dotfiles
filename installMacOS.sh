@@ -28,4 +28,5 @@ brew install --cask font-jetbrains-mono-nerd-font
 # Install ohmyzsh
 RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
+# Install NPM packages
+npm install -g prettier
