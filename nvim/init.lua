@@ -17,4 +17,5 @@ require("appearance")
 require("syntax-highlight")
 require("terminal")
 require("keybinds")
+require("clipboard")
 

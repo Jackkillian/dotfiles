@@ -21,7 +21,7 @@ sudo chflags nohidden /Volumes
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install various Homebrew packages
-brew install zsh eza spotify_player node git yazi neovim clangd basedpyright ruff ripgrep fd make llvm zsh-autosuggestions zsh-syntax-highlighting
+brew install zsh eza spotify_player node git yazi neovim clangd basedpyright ruff ripgrep fd make llvm zsh-autosuggestions zsh-syntax-highlighting lemonade
 brew install --cask brave-browser
 brew install --cask font-jetbrains-mono-nerd-font
 
