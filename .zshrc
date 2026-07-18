@@ -59,3 +59,13 @@ autoload -U promptinit; promptinit
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# CE dev
+export PATH="$PATH:$HOME/CEdev/bin"
+
+# bun completions
+[ -s "/Users/school/.bun/_bun" ] && source "/Users/school/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

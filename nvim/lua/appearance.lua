@@ -26,7 +26,8 @@ require("cyberdream").setup({
     default = true,
   },
 })
-vim.cmd.colorscheme("cyberdream")
+-- vim.cmd.colorscheme("cyberdream")
+vim.cmd.colorscheme("kanagawa")
 
 -- Sync light/dark mode with MacOS
 if vim.fn.has("mac") == 1 then

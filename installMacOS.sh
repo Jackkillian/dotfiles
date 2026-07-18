@@ -21,7 +21,7 @@ sudo chflags nohidden /Volumes
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install various Homebrew packages
-brew install zsh eza spotify_player node git yazi neovim clangd basedpyright ruff ripgrep fd make llvm zsh-autosuggestions zsh-syntax-highlighting lemonade
+brew install zsh eza spotify_player node git yazi neovim clangd basedpyright ruff ripgrep fd make llvm zsh-autosuggestions zsh-syntax-highlighting lemonade btm lazygit
 brew install --cask brave-browser
 brew install --cask font-jetbrains-mono-nerd-font
 
@@ -29,4 +29,4 @@ brew install --cask font-jetbrains-mono-nerd-font
 RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install NPM packages
-npm install -g prettier
+npm install -g prettier typescript-language-server typescript vscode-langservers-extracted @tailwindcss/language-server

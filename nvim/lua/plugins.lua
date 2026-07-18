@@ -10,6 +10,7 @@ require("lazy").setup({
       lazy = false,
       priority = 1000,
     },
+    "rebelot/kanagawa.nvim",
 
     -- Completion
     'hrsh7th/nvim-cmp',
@@ -98,5 +99,7 @@ require("lazy").setup({
       ---@module 'render-markdown'
       ---@type render.md.UserConfig
       opts = {},
-    }
+    },
+
+    "rust-lang/rust.vim"
 })
