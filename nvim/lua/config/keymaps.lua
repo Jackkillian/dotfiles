@@ -8,16 +8,6 @@ map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 map("n", "<C-h>", "<C-w>h", { desc = "Move focus to left window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move focus to right window" })
 
--- Spotify
-map("n", "<leader>mm", ":Spotify <CR>", { silent = true })
-map("n", "<leader>mo", ":Spotify pause<CR>", { silent = true })
-map("n", "<leader>mp", ":Spotify resume<CR>", { silent = true })
-map("n", "<leader>mj", ":Spotify next<CR>", { silent = true })
-map("n", "<leader>mk", ":Spotify prev<CR>", { silent = true })
-map("n", "<leader>md", ":Spotify select device<CR>", { silent = true })
-map("n", "<leader>ms", ":Spotify shuffle<CR>", { silent = true })
-map("n", "<leader>mr", ":Spotify repeat<CR>", { silent = true })
-
 -- Snacks
 map({ "n", "t" }, "<C-/>", function()
 	Snacks.terminal.toggle()
