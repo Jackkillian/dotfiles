@@ -6,13 +6,12 @@ require("lazy").setup({
 
 	-- Theme
 	{
-		"navarasu/onedark.nvim",
+		"uhs-robert/oasis.nvim",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedark").setup({
-				style = "darker",
-			})
-			require("onedark").load()
+			require("oasis").setup({ style = "lagoon" })
+			vim.cmd.colorscheme("oasis")
 		end,
 	},
 
@@ -41,7 +40,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				c = { "clang_format" },
 				cpp = { "clang_format" },
-				json = { "clang_format" },
+				json = { "prettierd", "prettier", stop_after_first = true },
 				html = { "prettierd", "prettier", stop_after_first = true },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
@@ -68,7 +67,7 @@ require("lazy").setup({
 		branch = "master",
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.config").setup({
+			require("nvim-treesitter.configs").setup({
 				ensure_installed = { "javascript", "lua", "python", "cpp", "css", "html", "rust" },
 				sync_install = false,
 				auto_install = true,
