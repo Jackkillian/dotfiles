@@ -1,19 +1,5 @@
 return {
 	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-			},
-		},
-		config = function()
-			require("telescope").setup({})
-			pcall(require("telescope").load_extension, "fzf")
-		end,
-	},
-	{
 		"folke/snacks.nvim",
 		priority = 1000,
 		lazy = false,
@@ -22,11 +8,26 @@ return {
 				enabled = true,
 				preset = {
 					keys = {
-						{ icon = "󰊳 ", key = "u", desc = "Update", action = ":Lazy update" },
-						{ icon = " ", key = "f", desc = "Files", action = ":Telescope find_files" },
-						{ icon = " ", key = "b", desc = "Builtins", action = ":Telescope builtin" },
-						{ icon = " ", key = "k", desc = "Keymaps", action = ":Telescope keymaps" },
-						{ icon = " ", key = "c", desc = "Config", action = ":e $MYVIMRC" },
+						{ icon = " ", key = "u", desc = "Update", action = ":Lazy update" },
+						{ icon = "󰈞 ", key = "f", desc = "Files", action = ":lua Snacks.dashboard.pick('files')" },
+						{
+							icon = "⚙ ",
+							key = "b",
+							desc = "Builtins",
+							action = ":lua Snacks.dashboard.pick('pickers')",
+						},
+						{
+							icon = " ",
+							key = "k",
+							desc = "Keymaps",
+							action = ":lua Snacks.dashboard.pick('keymaps')",
+						},
+						{
+							icon = " ",
+							key = "c",
+							desc = "Config",
+							action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+						},
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 					},
 				},
@@ -38,10 +39,33 @@ return {
 					{ section = "startup" },
 				},
 			},
-			tterminal = {
+			terminal = {
 				win = {
 					style = "float", -- NOTE: can also use "terminal"
 				},
+			},
+			picker = {
+				enabled = true,
+				hidden = true,
+				layout = {
+					preset = "default", -- Options: "default", "vertical", "dropdown", etc.
+				},
+				win = {
+					input = {
+						keys = {
+							["<C-n>"] = { "close", mode = { "n", "i" } },
+						},
+					},
+					list = {
+						keys = {
+							["<C-n>"] = { "close", mode = { "n", "i" } },
+						},
+					},
+				},
+			},
+			explorer = {
+				enabled = true,
+				replace_netrw = true,
 			},
 			image = {
 				enabled = true,
