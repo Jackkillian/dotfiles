@@ -1,3 +1,7 @@
+if [ -f ~/.config/secrets/.env ]; then
+  source ~/.config/secrets/.env
+fi
+
 if command -v brew > /dev/null ; then 
   eval "$(brew shellenv)"
   export PATH="$(brew --prefix llvm)/bin:$PATH"
