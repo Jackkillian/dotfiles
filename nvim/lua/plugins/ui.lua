@@ -1,57 +1,5 @@
 return {
 	{
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-						{
-							icon = " ",
-							icon_hl = "DiagnosticHint",
-							desc = "Builtins",
-							group = "DiagnosticHint",
-							action = "Telescope builtin",
-							key = "b",
-						},
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Keymaps",
-							group = "Label",
-							action = "Telescope keymaps",
-							key = "k",
-						},
-					},
-					project = {
-						enable = true,
-						limit = 8,
-						action = "Telescope find_files cwd=",
-					},
-					mru = {
-						enable = true,
-						limit = 10,
-					},
-					footer = {},
-				},
-			})
-		end,
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
-	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",

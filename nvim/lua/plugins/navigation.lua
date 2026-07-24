@@ -18,7 +18,27 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
-			terminal = {
+			dashboard = {
+				enabled = true,
+				preset = {
+					keys = {
+						{ icon = "󰊳 ", key = "u", desc = "Update", action = ":Lazy update" },
+						{ icon = " ", key = "f", desc = "Files", action = ":Telescope find_files" },
+						{ icon = " ", key = "b", desc = "Builtins", action = ":Telescope builtin" },
+						{ icon = " ", key = "k", desc = "Keymaps", action = ":Telescope keymaps" },
+						{ icon = " ", key = "c", desc = "Config", action = ":e $MYVIMRC" },
+						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+					},
+				},
+				sections = {
+					{ section = "header" },
+					{ section = "keys", gap = 1, padding = 1 },
+					{ section = "recent_files", title = "Recent Files", limit = 10, padding = 1 },
+					{ section = "projects", title = "Projects", limit = 8, padding = 1 },
+					{ section = "startup" },
+				},
+			},
+			tterminal = {
 				win = {
 					style = "float", -- NOTE: can also use "terminal"
 				},
