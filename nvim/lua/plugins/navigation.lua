@@ -62,6 +62,17 @@ return {
 						},
 					},
 				},
+				sources = {
+					files = {
+						hidden = true,
+					},
+					explorer = {
+						hidden = true,
+					},
+					smart = {
+						hidden = true,
+					},
+				},
 			},
 			explorer = {
 				enabled = true,
