@@ -25,10 +25,6 @@ opt.cursorline = true
 opt.scrolloff = 8
 opt.splitright = false
 opt.splitbelow = false
-vim.g.floaterm_autoclose = 0
-vim.g.floaterm_width = 0.8
-vim.g.floaterm_height = 0.8
-vim.g.floaterm_borderchars = "─│─│╭╮╯╰"
 vim.o.winborder = "rounded"
 vim.diagnostic.config({
 	update_in_insert = true,
