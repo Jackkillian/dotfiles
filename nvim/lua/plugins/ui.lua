@@ -3,17 +3,6 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			local filename_conf = {
-				"filename",
-				path = 1,
-				symbols = {
-					modified = "*",
-					readonly = "[-]",
-					unnamed = "[No Name]",
-					newfile = "[New]",
-				},
-			}
-
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -51,8 +40,19 @@ return {
 					lualine_a = { "mode" },
 					lualine_b = { "diff" },
 					lualine_c = { "diagnostics", "searchcount" },
-					lualine_x = {},
-					lualine_y = { "lsp_status" },
+					lualine_x = {
+						{
+							"filename",
+							path = 1,
+							symbols = {
+								modified = "*",
+								readonly = "[-]",
+								unnamed = "[No Name]",
+								newfile = "[New]",
+							},
+						},
+					},
+					lualine_y = { "filetype" },
 					lualine_z = { "location" },
 				},
 				inactive_sections = {
@@ -76,7 +76,7 @@ return {
 					},
 					lualine_b = {},
 					lualine_c = {},
-					lualine_x = {},
+					lualine_x = { "lsp_status" },
 					lualine_y = {
 						{
 							"datetime",
@@ -94,22 +94,8 @@ return {
 						},
 					},
 				},
-				winbar = {
-					lualine_a = {},
-					lualine_b = { filename_conf },
-					lualine_c = {},
-					lualine_x = { "encoding" },
-					lualine_y = { "filetype" },
-					lualine_z = {},
-				},
-				inactive_winbar = {
-					lualine_a = {},
-					lualine_b = {},
-					lualine_c = { filename_conf },
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = {},
-				},
+				winbar = {},
+				inactive_winbar = {},
 				extensions = {},
 			})
 		end,
