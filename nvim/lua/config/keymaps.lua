@@ -54,7 +54,7 @@ map("n", "<leader>fr", function()
 end, { desc = "Recent Files" })
 
 -- Git
-map("n", "<leader>gc", function()
+map("n", "<leader>gl", function()
 	Snacks.picker.git_log()
 end, { desc = "Git Commits" })
 map("n", "<leader>gs", function()
