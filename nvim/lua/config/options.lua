@@ -13,7 +13,7 @@ opt.softtabstop = 4
 
 -- Search Settings
 opt.ignorecase = true
-opt.smartcase = false
+opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
 
