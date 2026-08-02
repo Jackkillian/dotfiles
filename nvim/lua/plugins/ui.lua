@@ -59,7 +59,18 @@ return {
 					lualine_a = {},
 					lualine_b = {},
 					lualine_c = { "diagnostics" },
-					lualine_x = {},
+					lualine_x = {
+						{
+							"filename",
+							path = 1,
+							symbols = {
+								modified = "*",
+								readonly = "[-]",
+								unnamed = "[No Name]",
+								newfile = "[New]",
+							},
+						},
+					},
 					lualine_y = {},
 					lualine_z = {},
 				},
