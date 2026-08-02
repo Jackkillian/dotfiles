@@ -1,0 +1,6 @@
+client.yml
+spotatui_panic.log
+streaming_cache/
+history/
+spotatui-recap.html
+.spotify_token*
