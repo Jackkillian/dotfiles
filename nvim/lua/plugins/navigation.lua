@@ -53,7 +53,7 @@ return {
 				sources = {
 					explorer = {
 						hidden = true,
-						ignored = false,
+						ignored = true,
 					},
 				},
 				layout = {
