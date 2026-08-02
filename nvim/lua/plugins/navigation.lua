@@ -47,6 +47,11 @@ return {
 			picker = {
 				enabled = true,
 				hidden = true,
+				ignored = false,
+				exclude = {
+					"node_modules",
+					".git",
+				},
 				layout = {
 					preset = "default", -- Options: "default", "vertical", "dropdown", etc.
 				},
@@ -60,17 +65,6 @@ return {
 						keys = {
 							["<C-n>"] = { "close", mode = { "n", "i" } },
 						},
-					},
-				},
-				sources = {
-					files = {
-						hidden = true,
-					},
-					explorer = {
-						hidden = true,
-					},
-					smart = {
-						hidden = true,
 					},
 				},
 			},
