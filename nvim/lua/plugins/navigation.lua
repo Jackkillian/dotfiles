@@ -50,6 +50,12 @@ return {
 					hidden = true,
 					ignored = false,
 				},
+				sources = {
+					explorer = {
+						hidden = true,
+						ignored = false,
+					},
+				},
 				layout = {
 					preset = "default", -- Options: "default", "vertical", "dropdown", etc.
 				},
