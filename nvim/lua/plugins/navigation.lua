@@ -46,11 +46,15 @@ return {
 			},
 			picker = {
 				enabled = true,
-				opts = {
-					hidden = true,
-					ignored = false,
-				},
 				sources = {
+					files = {
+						hidden = true,
+						ignored = false,
+					},
+					grep = {
+						hidden = true,
+						ignored = false,
+					},
 					explorer = {
 						hidden = true,
 						ignored = true,
