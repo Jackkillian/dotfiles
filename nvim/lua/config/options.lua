@@ -34,7 +34,7 @@ vim.diagnostic.config({
 })
 
 -- Clipboard + System
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamedplus"
 opt.updatetime = 250
 opt.undofile = true
 
