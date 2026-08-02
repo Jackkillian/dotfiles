@@ -46,11 +46,9 @@ return {
 			},
 			picker = {
 				enabled = true,
-				hidden = true,
-				ignored = false,
-				exclude = {
-					"node_modules",
-					".git",
+				opts = {
+					hidden = true,
+					ignored = false,
 				},
 				layout = {
 					preset = "default", -- Options: "default", "vertical", "dropdown", etc.
