@@ -40,7 +40,7 @@ fi
 
 # Install cargo packages
 echo "Installing cargo crates..."
-cargo install spotatui
+cargo install spotatui stylua
 
 # Install ohmyzsh
 RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
