@@ -35,3 +35,14 @@ vim.api.nvim_create_autocmd("VimResized", {
 		vim.cmd("tabdo wincmd =")
 	end,
 })
+
+-- Turn off line wrapping in Milli buffers
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*",
+  callback = function(args)
+    local buf_name = vim.api.nvim_buf_get_name(args.buf)
+    if buf_name:lower():match("milli") then
+      vim.opt_local.wrap = false
+    end
+  end,
+})
