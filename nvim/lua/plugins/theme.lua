@@ -1,11 +1,14 @@
 return {
-	{
-		"uhs-robert/oasis.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("oasis").setup({ style = "lagoon" })
-			vim.cmd.colorscheme("oasis")
-		end,
-	},
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup({
+			transparent_background = true,
+			float = {
+				transparent = true,
+			},
+		})
+		vim.cmd.colorscheme("catppuccin-macchiato")
+	end,
 }
