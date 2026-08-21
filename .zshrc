@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if command -v brew > /dev/null ; then 
   eval "$(brew shellenv)"
   export PATH="$(brew --prefix llvm)/bin:$PATH"
@@ -6,8 +13,7 @@ fi
 export PATH="$HOME/.local/bin:$HOME/Library/Python/3.13/bin:$HOME/Documents/GitHub/emsdk:$HOME/Documents/GitHub/emsdk/upstream/emscripten:$PATH"
 
 if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
-  # Use robbyrussell on local system
-  ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 else
   # Use a custom theme later on remote systems
   ZSH_THEME=""
@@ -69,3 +75,6 @@ export PATH="$PATH:$HOME/CEdev/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
